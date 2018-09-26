@@ -74,8 +74,8 @@ function craw(url, cb){
                     address = _.trim(_.replace($(this).text(), /\n/g, "").split("\t")[0]).split(",");
                 }
             });
-            var city = address[0];
-            var country = _.trim(address[1].substring(0,address[1].indexOf(")")+1));
+            var city = address[0] || "";
+            var country = _.trim(address[1] ? address[1].substring(0,address[1].indexOf(")")+1) : "");
             // console.log(address)
             var airport = {
                 geo: [parseFloat(lon), parseFloat(lat)],
