@@ -77,6 +77,7 @@ MongoClient.connect("mongodb://192.168.2.85:27017", function(err, client) {
                         city: city,
                         country: country
                     }
+                    console.log(JSON.stringify(airport));
                     cb(airport);
                     // cb(null, {code: 0, data: result})
                 } else if (response && response.statusCode == 404) {
